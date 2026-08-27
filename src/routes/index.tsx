@@ -99,7 +99,9 @@ function RegisterPage() {
       <div className="w-full max-w-5xl">
         <div className="k-card grid grid-cols-1 lg:grid-cols-12">
           <aside className="hidden bg-k-dark p-10 text-white lg:col-span-5 lg:flex lg:flex-col">
-            <img src={logo.url} alt="KOZENA SITE" className="mb-10 h-10 w-auto object-contain" />
+            <div className="mb-10 inline-flex w-fit rounded-xl bg-white px-3 py-2">
+              <img src={logo.url} alt="KOZENA SITE" className="h-8 w-auto object-contain" />
+            </div>
             <h2 className="text-2xl font-bold">Join our community</h2>
             <p className="mt-3 text-sm text-white/60">
               Fungua akaunti yako, lipia kwa USSD Push na anza kutumia mfumo mara moja.
