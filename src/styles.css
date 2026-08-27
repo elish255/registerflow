@@ -142,3 +142,146 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── KOZENA SITE design system ───────────────────────────────── */
+:root {
+  --font-sans: 'Satoshi', system-ui, sans-serif;
+  --font-jost: 'Jost', system-ui, sans-serif;
+
+  --k-bg: oklch(0.8372 0.0626 230.05);
+  --k-indigo: oklch(0.5106 0.2301 276.97);
+  --k-indigo-dark: oklch(0.4568 0.2146 277.02);
+  --k-violet: oklch(0.5413 0.2466 293.01);
+  --k-dark: oklch(0.2621 0.0095 248.19);
+  --k-accent: oklch(0.6953 0.1204 240.24);
+
+  --k-slate-900: oklch(0.2077 0.0398 265.75);
+  --k-slate-800: oklch(0.2795 0.0368 260.03);
+  --k-slate-500: oklch(0.5544 0.0407 257.42);
+  --k-slate-200: oklch(0.9288 0.0126 255.51);
+  --k-slate-100: oklch(0.9683 0.0069 247.90);
+  --k-slate-50: oklch(0.9842 0.0034 247.86);
+
+  --k-green-900: oklch(0.3780 0.0730 168.94);
+  --k-green-800: oklch(0.4318 0.0865 166.91);
+  --k-green-700: oklch(0.5081 0.1049 165.61);
+  --k-green-600: oklch(0.5960 0.1274 163.23);
+  --k-green-100: oklch(0.9505 0.0507 163.05);
+  --k-green-50: oklch(0.9793 0.0207 166.11);
+
+  --k-amber-400: oklch(0.8369 0.1644 84.43);
+  --k-amber-500: oklch(0.7686 0.1647 70.08);
+  --k-amber-100: oklch(0.9619 0.0580 95.62);
+
+  --k-red-600: oklch(0.5771 0.2152 27.33);
+  --k-red-300: oklch(0.8077 0.1035 19.57);
+  --k-red-100: oklch(0.9356 0.0309 17.72);
+  --k-red-50: oklch(0.9705 0.0129 17.38);
+  --k-red-900: oklch(0.3958 0.1331 25.72);
+
+  --k-brand-gradient: linear-gradient(135deg, var(--k-indigo) 0%, var(--k-violet) 100%);
+  --k-shadow-card: 0 20px 50px -20px oklch(0.2077 0.0398 265.75 / 0.35);
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-jost: var(--font-jost);
+  --color-k-bg: var(--k-bg);
+  --color-k-indigo: var(--k-indigo);
+  --color-k-indigo-dark: var(--k-indigo-dark);
+  --color-k-violet: var(--k-violet);
+  --color-k-dark: var(--k-dark);
+  --color-k-accent: var(--k-accent);
+  --color-k-slate-900: var(--k-slate-900);
+  --color-k-slate-800: var(--k-slate-800);
+  --color-k-slate-500: var(--k-slate-500);
+  --color-k-slate-200: var(--k-slate-200);
+  --color-k-slate-100: var(--k-slate-100);
+  --color-k-slate-50: var(--k-slate-50);
+  --color-k-green-900: var(--k-green-900);
+  --color-k-green-800: var(--k-green-800);
+  --color-k-green-700: var(--k-green-700);
+  --color-k-green-600: var(--k-green-600);
+  --color-k-green-100: var(--k-green-100);
+  --color-k-green-50: var(--k-green-50);
+  --color-k-amber-400: var(--k-amber-400);
+  --color-k-amber-500: var(--k-amber-500);
+  --color-k-amber-100: var(--k-amber-100);
+  --color-k-red-600: var(--k-red-600);
+  --color-k-red-300: var(--k-red-300);
+  --color-k-red-100: var(--k-red-100);
+  --color-k-red-50: var(--k-red-50);
+  --color-k-red-900: var(--k-red-900);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@utility k-auth-bg {
+  background:
+    radial-gradient(at 0% 0%, oklch(0.5106 0.2301 276.97 / 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, oklch(0.5413 0.2466 293.01 / 0.12) 0px, transparent 50%),
+    var(--k-bg);
+}
+
+@utility k-brand-side {
+  background: var(--k-brand-gradient);
+}
+
+@utility k-card {
+  background: oklch(1 0 0);
+  border-radius: 1.25rem;
+  box-shadow: var(--k-shadow-card);
+  overflow: hidden;
+}
+
+@utility k-field {
+  width: 100%;
+  border-radius: 0.65rem;
+  border: 1px solid var(--k-slate-200);
+  background: var(--k-slate-50);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--k-slate-900);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, background .15s ease;
+}
+
+@utility k-field-focus {
+  box-shadow: 0 0 0 4px oklch(0.5106 0.2301 276.97 / 0.12);
+  border-color: var(--k-indigo);
+  background: oklch(1 0 0);
+}
+
+@utility k-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 0.7rem;
+  background: var(--k-indigo);
+  color: oklch(1 0 0);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  transition: background .15s ease, transform .15s ease, opacity .15s ease;
+}
+
+@utility k-btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 0.9rem;
+  background: var(--k-green-800);
+  color: oklch(1 0 0);
+  font-weight: 700;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-jost);
+  letter-spacing: 0.5px;
+  transition: background .15s ease, transform .15s ease, opacity .15s ease;
+}
